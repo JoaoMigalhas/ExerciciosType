@@ -1,0 +1,61 @@
+Criação do README.md
+Alteração do README.md
+Versionamento em commits diferentes
+Voltar o README.md para uma versão anterior
+
+1. Criar uma pasta para o projeto
+mkdir projeto_readme_git        # Cria a pasta do projeto
+cd projeto_readme_git           # Entra na pasta
+
+2. Inicializar o repositório Git
+git init                        # Cria um repositório Git vazio
+
+3. Configurar usuário (somente 1 vez por computador)
+git config --global user.name "Seu Nome"        # Nome que aparecerá nos commits
+git config --global user.email "seu@email.com"  # Email associado aos commits
+
+4. Criar o README inicial (v1)
+echo "# Meu Projeto" > README.md                # Cria README.md com um título
+echo "Primeira versão do README" >> README.md   # Adiciona um texto
+
+5. Verificar o status
+git status                                      # Mostra arquivos não rastreados
+
+6. Adicionar o README ao stage
+git add README.md                               # Prepara o arquivo para commit
+
+7. Criar o primeiro commit (v1)
+git commit -m "v1: cria README com título e descrição inicial"
+
+8. Alterar o README (v2)
+echo "## Como executar" >> README.md
+echo "1. Passo 1" >> README.md
+echo "2. Passo 2" >> README.md
+
+9. Verificar status e diferenças
+git status                                      # Mostra que README foi modificado
+git diff                                        # Mostra o que mudou
+
+10. Adicionar e commitar as mudanças (v2)
+git add README.md
+git commit -m "v2: adiciona seção 'Como executar'"
+
+11. Evoluir mais uma vez o README (v3)
+echo "## Licença" >> README.md
+echo "MIT" >> README.md
+git add README.md
+git commit -m "v3: adiciona seção de licença"
+
+12. Ver histórico de commits
+git log --oneline                              # Mostra o histórico resumido
+
+13. Restaurar o README para a versão 1
+git checkout HEAD~2 -- README.md               # Restaura README do commit v1
+cat README.md                                  # Mostra conteúdo restaurado
+
+14. Criar novo commit (v4 - restauração)
+git add README.md
+git commit -m "v4: restaura README ao estado da v1"
+
+15. Ver histórico completo
+git log --oneline --graph                      # Mostra todos os commits na linha do tempo
